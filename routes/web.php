@@ -22,6 +22,6 @@ Route::prefix('users')->group(function () {
     Route::get('/create', 'App\Http\Controllers\UsersController@create')->name('users.create');
     Route::post('/', 'App\Http\Controllers\UsersController@store')->name('users.store');
     Route::get('/{user}/edit', 'App\Http\Controllers\UsersController@edit')->name('users.edit');
-    Route::put('/{user}', 'App\Http\Controllers\UsersController@update')->name('users.update');
+    Route::post('/{user}', 'App\Http\Controllers\UsersController@update')->name('users.update');
     Route::delete('/{user}', 'App\Http\Controllers\UsersController@destroy')->name('users.destroy');
 });

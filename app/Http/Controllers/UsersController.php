@@ -64,16 +64,20 @@ class UsersController extends Controller
     //     return view('users.show', compact('user'));
     // }
 
-    // public function edit(User $user)
-    // {
-    //     return view('users.edit', compact('user'));
-    // }
+    public function edit(User $user)
+    {
+        // get user
+        $user = User::find($user->id);
+        return response()->json($user);
+    }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
         // $request->validate([
         //     'name' => 'required|string|max:255|unique:users,name,' . $user->id,
         // ]);
+
+        $user = User::find($request->id);
 
         $user->update($request->all());
 
